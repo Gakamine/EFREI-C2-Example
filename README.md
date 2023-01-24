@@ -9,7 +9,7 @@ A simple C2 meant to be used behind Google Translate Webpages as a proxy for dat
 - Create an admin user: ``python manage.py createsuperuser --username <username>``
 - Log on the admin dashboard at ``127.0.0.1:8000/admin``
 
-## Use
+## Usage
 - Data are collected directly from the URL
 - simply send data to the base URL: ``http://127.0.0.1:8000/<hostname>/<ip>/<data_type>/<data>/<file_type>``
   - ``hostname`` is your victim hostname.
