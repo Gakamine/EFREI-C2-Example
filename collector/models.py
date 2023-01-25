@@ -17,3 +17,12 @@ class Data(models.Model):
     is_file = models.BooleanField(default=False)
     def __str__(self):
         return self.computer.hostname
+
+class Action(models.Model):
+    computer = models.ForeignKey(Computer, on_delete=models.CASCADE)
+    pub_date = models.DateTimeField(auto_now_add=True)
+    command = models.CharField(max_length=200)
+    performed = models.BooleanField(default=False)
+    staged = models.BooleanField(default=True)
+    def __str__(self):
+        return self.computer.hostname
