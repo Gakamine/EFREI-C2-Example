@@ -13,6 +13,7 @@ class Data(models.Model):
     data_type = models.CharField(max_length=200)
     data_content = models.CharField(max_length=200)
     pub_date = models.DateTimeField(auto_now_add=True)
+    data_hash = models.CharField(max_length=200,null=True,blank=True)
     is_file = models.BooleanField(default=False)
     def __str__(self):
         return self.computer.hostname
