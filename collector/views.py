@@ -13,7 +13,7 @@ def index(request=None, hostname=None, ip=None,data_type=None,data_content=None,
             host=Computer.objects.create(hostname=hostname,ip_address=ip)
             host.save()
         if data_hash:
-            data=Data.objects.filter(data_hash=data_hash)
+            data=Data.objects.filter(data_hash=data_hash,computer=host)
             if data.exists():
                 data=data[0]
                 data.data_content=data.data_content+data_content
