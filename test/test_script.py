@@ -6,8 +6,9 @@ HOSTNAME="USER-PC"
 IP="192.168.1.1"
 DATATYPE="PDF"
 BASE_URL = "http://127.0.0.1:8000/"
+FILE='sample.df'
 
-with open('sample.pdf', 'rb') as afile:
+with open(FILE, 'rb') as afile:
     base64=base64.b64encode(afile.read()).decode()
     hash_file=hashlib.md5(afile.read()).hexdigest()
 
