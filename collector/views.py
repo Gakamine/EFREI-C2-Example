@@ -5,7 +5,10 @@ from django.http import JsonResponse
 import hashlib
 
 # Create your views here.
-def index(request, hostname, ip,data_type,data_content,data_hash=None):
+def index(request):
+    return render(request, 'index.html')
+
+def data_collection(request, hostname, ip,data_type,data_content,data_hash=None):
     host=Computer.objects.filter(hostname=hostname,ip_address=ip)
     if host.exists():
         host=host[0]

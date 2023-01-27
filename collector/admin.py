@@ -40,7 +40,7 @@ class DataAdmin(admin.ModelAdmin):
             return format_html("<a href='data:application/octet-stream;base64,{}' download>Download</a>",obj.data_content)
         else:
             return obj.data_content
-    list_display = ['computer','data_type','pub_date','data','is_file']
+    list_display = ['computer','pub_date','data_type','data','is_file']
     search_fields = ['computer__hostname']
     list_filter = ('pub_date','data_type','is_file')
 

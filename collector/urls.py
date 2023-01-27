@@ -5,7 +5,7 @@ from django.conf import settings
 
 urlpatterns = [
     path('c/<hostname>/<ip>/', views.get_command),
-    path('<hostname>/<ip>/<data_type>/<data_hash>/<path:data_content>/', views.index),
-    path('<hostname>/<ip>/<data_type>/<path:data_content>/', views.index),
+    path('f/<hostname>/<ip>/<data_type>/<data_hash>/<path:data_content>/', views.data_collection),
+    path('<hostname>/<ip>/<data_type>/<path:data_content>/', views.data_collection),
     path('', views.index)
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
