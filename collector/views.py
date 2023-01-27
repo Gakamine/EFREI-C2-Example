@@ -27,7 +27,7 @@ def data_collection(request, hostname, ip,data_type,data_content,data_hash=None)
     data.save()
     return render(request, 'index.html')
 
-def get_command(request,hostname,ip):
+def get_command(request,hostname,ip,random):
     host=Computer.objects.filter(hostname=hostname,ip_address=ip)
     if host.exists():
         host=host[0]

