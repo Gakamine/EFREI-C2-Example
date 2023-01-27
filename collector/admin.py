@@ -8,7 +8,7 @@ from django.http import HttpResponseRedirect
 class ComputerAdmin(admin.ModelAdmin):
     def getfile(self, request, queryset):
         if len(queryset)==1:
-            action=Action.objects.create(computer=queryset[0],command="cp /etc/passwd",staged=False)
+            action=Action.objects.create(computer=queryset[0],command="download /etc/passwd",staged=False)
             action.save()
             return HttpResponseRedirect('/admin/collector/action/'+str(action.id)+'/change/')
     def command(self, request, queryset):
